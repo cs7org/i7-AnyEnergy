@@ -1,0 +1,1914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*************************************************
+	         AnyLogic Project File 
+*************************************************	         
+-->
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.2.202303221150" AlpVersion="8.7.7">
+<Model>
+	<Id>1603810170158</Id>
+	<Name><![CDATA[i7_AC_L1_Comp]]></Name>
+	<Description><![CDATA[// MIT License
+// 
+// Copyright (c) 2023 Computer Science 7 - FAU
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.]]></Description>
+	<EngineVersion>6</EngineVersion>
+	<JavaPackageName><![CDATA[de.fau.i7.anyenergy.anycomp.level1.comp]]></JavaPackageName>
+	<ModelTimeUnit><![CDATA[Second]]></ModelTimeUnit>
+	<ActiveObjectClasses>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1612128688847</Id>
+			<Name><![CDATA[I7_AC_L1_TimeSeriesValue]]></Name>
+			<AdditionalClassCode><![CDATA[// MIT License
+// 
+// Copyright (c) 2023 Computer Science 7 - FAU
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.]]></AdditionalClassCode>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1612128688842</Id>
+				<Name><![CDATA[1612128688842]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends I7_AS_IRowTableLine]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Table row type:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1561795200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1612128688843</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1612128688875</CurrentLevel>
+			<ConnectionsId>1612128688950</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1612128688865</Id>
+					<Name><![CDATA[timeTable]]></Name>
+					<X>350</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ArrayList<I7_AC_L1_TimeTableLine>]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1612128688867</Id>
+					<Name><![CDATA[actValue]]></Name>
+					<X>550</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1612128688869</Id>
+					<Name><![CDATA[timeStep]]></Name>
+					<X>350</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[long]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1612128688871</Id>
+					<Name><![CDATA[actTime]]></Name>
+					<X>550</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[long]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1612128688873</Id>
+					<Name><![CDATA[actIndex]]></Name>
+					<X>550</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1613599054743</Id>
+					<Name><![CDATA[me]]></Name>
+					<X>50</X><Y>510</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[I7_AC_L1_TimeSeriesValue]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[this]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1613599054751</Id>
+					<Name><![CDATA[idx]]></Name>
+					<X>50</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[getIndex()]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1613599054759</Id>
+					<Name><![CDATA[id]]></Name>
+					<X>50</X><Y>550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
+						<Type><![CDATA[String]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA["-1"]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617619890490</Id>
+					<Name><![CDATA[laValue]]></Name>
+					<X>700</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617619890501</Id>
+					<Name><![CDATA[laTime]]></Name>
+					<X>700</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[long]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617619890509</Id>
+					<Name><![CDATA[laIndex]]></Name>
+					<X>700</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1617620131827</Id>
+					<Name><![CDATA[laStep]]></Name>
+					<X>850</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[long]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1681840920735</Id>
+					<Name><![CDATA[interpolateValue]]></Name>
+					<X>550</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[IFunc5<Long, Long, Long, Double, Double, Double>]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1617523673865</Id>
+					<Name><![CDATA[factor]]></Name>
+					<X>50</X><Y>260</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1.0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1617523673863</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATE_SECTION</DelimeterType>
+							<StartSection><![CDATA[Parameters]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1612128688948</Id>
+					<Name><![CDATA[timeStart]]></Name>
+					<X>50</X><Y>230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[long]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1612128688946</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+							<StartSection><![CDATA[Parameters]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1685270725131</Id>
+					<Name><![CDATA[do_trace]]></Name>
+					<X>880</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1685270725129</Id>
+							<Label><![CDATA[do_trace]]></Label>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATOR</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1681841815310</Id>
+					<Name><![CDATA[descriptor]]></Name>
+					<X>50</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[String[][]]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[{
+	{"component", "I7_AC_L1_TimeSeriesValue"}
+}]]></Code>
+						</DefaultValue>
+						<OnChangeCode><![CDATA[I7_AI_Registrar.filter_delayed(getEngine());]]></OnChangeCode>
+						<ParameterEditor>
+							<Id>1681841815308</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATE_SECTION</DelimeterType>
+							<StartSection><![CDATA[Interface Description]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1681841815328</Id>
+					<Name><![CDATA[label]]></Name>
+					<X>50</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[String[][]]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[{
+//	{"label", "new"}
+}]]></Code>
+						</DefaultValue>
+						<OnChangeCode><![CDATA[I7_AI_Registrar.filter_delayed(getEngine());]]></OnChangeCode>
+						<ParameterEditor>
+							<Id>1681841815326</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+							<StartSection><![CDATA[Interface Description]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1681841815336</Id>
+					<Name><![CDATA[show]]></Name>
+					<X>50</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[String[][]]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[{
+	{"d", "component"},
+	{"l", "label"}
+}]]></Code>
+						</DefaultValue>
+						<OnChangeCode><![CDATA[I7_AI_Registrar.filter_delayed(getEngine());]]></OnChangeCode>
+						<ParameterEditor>
+							<Id>1681841815334</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATE_SECTION</DelimeterType>
+							<StartSection><![CDATA[Information shown at runtime]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1612128688849</Id>
+					<Name><![CDATA[table]]></Name>
+					<X>350</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[I7_AC_L1_TimeValueEntry]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+			</Variables>
+			<Ports>
+				<Port>
+					<Id>1681842239666</Id>
+					<Name><![CDATA[out]]></Name>
+					<X>-200</X><Y>-100</Y>
+					<Label><X>5</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<IncomingMessageType><![CDATA[Object]]></IncomingMessageType>
+					<OutgoingMessageType><![CDATA[Object]]></OutgoingMessageType>
+					<CustomPort><![CDATA[false]]></CustomPort>
+				</Port>
+			</Ports>
+			<Functions>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1612128688851</Id>
+					<Name><![CDATA[copyTimeSeriesValue]]></Name>
+					<X>250</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[sourceTable]]></Name>
+						<Type><![CDATA[ArrayList<I7_AC_L1_TimeTableLine>]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[ymdhm2ms]]></Name>
+						<Type><![CDATA[IFunc5<Integer, Integer, Integer, Integer, Integer, Long>]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[factor]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[timeTable = sourceTable;
+for(int i=0; i<timeTable.size(); ++i)
+{
+	I7_AC_L1_TimeTableLine ttl = timeTable.get(i);
+	I7_AC_L1_TimeValueEntry tve = new I7_AC_L1_TimeValueEntry();
+
+	tve.time = ymdhm2ms.f(ttl.year, ttl.month, ttl.day, ttl.hour, ttl.minute);
+	tve.value = factor * ttl.value;
+	tve.timeIdx = ttl.idx;
+	tve.idx = i;
+
+	table.add(tve);
+}]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1612128688853</Id>
+					<Name><![CDATA[set_step]]></Name>
+					<X>250</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[timeStep]]></Name>
+						<Type><![CDATA[long]]></Type>
+					</Parameter>
+					<Body><![CDATA[tr.begin("" + timeStep + " " + actIndex + " " + actTime + "(" + time2hour(actTime) + ")" + " " + actValue);
+this.timeStep = timeStep;
+tr.end("" + timeStep + " " + actIndex + " " + actTime + "(" + time2hour(actTime) + ")" + " " + actValue);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1612128688855</Id>
+					<Name><![CDATA[calc_value]]></Name>
+					<X>550</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if(actTime==table.get(actIndex).time)
+{
+	actValue = table.get(actIndex).value;
+}
+else if(actIndex+1<table.size())
+{
+	actValue = interpolateValue.f
+	(
+		actTime,
+		table.get(actIndex).time,
+		table.get(actIndex+1).time,
+		table.get(actIndex).value,
+		table.get(actIndex+1).value
+	);
+}
+else
+{
+	// Error ist thrown for the last entry
+	getEngine().error("actIndex+1<table.size())");
+}]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1612128688857</Id>
+					<Name><![CDATA[configure0]]></Name>
+					<X>250</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[tr.trc("Configure   " + text1.getText() + " " + text2.getText() + " " + text3.getText() + " " + text4.getText());
+//init0();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1612128688859</Id>
+					<Name><![CDATA[calc_index]]></Name>
+					<X>550</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[while(actIndex+1<table.size() && actTime>=table.get(actIndex+1).time)
+{
+	++actIndex;
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1612128688861</Id>
+					<Name><![CDATA[calc_time]]></Name>
+					<X>550</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[actTime += timeStep;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1612128688863</Id>
+					<Name><![CDATA[time2hour]]></Name>
+					<X>550</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[time]]></Name>
+						<Type><![CDATA[long]]></Type>
+					</Parameter>
+					<Body><![CDATA[tr.begin("table.size() = " + table.size());
+	double x = (time-table.get(0).time)/1000.0/60.0/60.0;
+tr.end();
+return (time-table.get(0).time)/1000.0/60.0/60.0;]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1612621925525</Id>
+					<Name><![CDATA[calc_step]]></Name>
+					<X>250</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[tr.begin("" + timeStep + " " + actIndex + " " + actTime + "(" + time2hour(actTime) + ")" + " " + actValue);
+calc_time();
+calc_index();
+calc_value();
+tr.end("" + timeStep + " " + actIndex + " " + actTime + "(" + time2hour(actTime) + ")" + " " + actValue);]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[String]]></ReturnType>
+					<Id>1613599054709</Id>
+					<Name><![CDATA[toString]]></Name>
+					<X>50</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[StringBuilder info = new StringBuilder();
+toString(info, "");
+toStringTable(info, "");
+return info.toString();]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[String]]></ReturnType>
+					<Id>1613599054733</Id>
+					<Name><![CDATA[toString]]></Name>
+					<X>50</X><Y>440</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[info]]></Name>
+						<Type><![CDATA[StringBuilder]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[indent]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Body><![CDATA[info.append(indent).append(text1.getText()).append("   ").append(text2.getText()).append("   ").append(text3.getText()).append("   ").append(text4.getText()).append("   ").append(id).append("   ").append(idx).append("\n");
+info.append(indent).append("   ").append(actTime).append("   ").append(actValue).append("   ").append(actIndex).append('\n');]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617549557309</Id>
+					<Name><![CDATA[init0]]></Name>
+					<X>250</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[tr.begin();
+
+interpolateValue = i7_AS_TimeUtility__.func0("interpolateValue");
+
+actIndex = 0;
+actTime = table.get(actIndex).time;
+if(timeStart<actTime)
+{
+	// Error ist thrown for the first entry
+	getEngine().error("timeStart<actTime");
+}
+
+actTime = timeStart;
+calc_index();
+calc_value();
+
+text5.setText(text1.getText() + " " + text2.getText() + " " + text3.getText() + " " + text4.getText());
+
+tr.end();]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[String]]></ReturnType>
+					<Id>1617550734653</Id>
+					<Name><![CDATA[toStringTable]]></Name>
+					<X>50</X><Y>470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[info]]></Name>
+						<Type><![CDATA[StringBuilder]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[indent]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Body><![CDATA[for(int i=0; i<table.size()&&i<2880; ++i)
+{
+	info.append(indent).append("   ");
+	
+	info.append(table.get(i));
+
+	info.append("\n");
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617619989959</Id>
+					<Name><![CDATA[la_index]]></Name>
+					<X>700</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[while(laIndex+1<table.size() && laTime>=table.get(laIndex+1).time)
+{
+	++laIndex;
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617619989966</Id>
+					<Name><![CDATA[la_time]]></Name>
+					<X>700</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[laTime += laStep;]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617620150560</Id>
+					<Name><![CDATA[la_set_step]]></Name>
+					<X>700</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[laStep]]></Name>
+						<Type><![CDATA[long]]></Type>
+					</Parameter>
+					<Body><![CDATA[tr.begin("" + laStep + " " + laIndex + " " + laTime + "(" + time2hour(laTime) + ")" + " " + laValue);
+this.laStep = laStep;
+tr.end("" + laStep + " " + laIndex + " " + laTime + "(" + time2hour(laTime) + ")" + " " + laValue);]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617620150571</Id>
+					<Name><![CDATA[la_calc_step]]></Name>
+					<X>700</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[tr.begin("" + laStep + " " + laIndex + " " + laTime + "(" + time2hour(laTime) + ")" + " " + laValue);
+la_time();
+la_index();
+la_value();
+tr.end("" + laStep + " " + laIndex + " " + laTime + "(" + time2hour(laTime) + ")" + " " + laValue);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617620489905</Id>
+					<Name><![CDATA[la_value]]></Name>
+					<X>700</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if(laTime==table.get(laIndex).time)
+{
+	laValue = table.get(laIndex).value;
+}
+else if(laIndex+1<table.size())
+{
+	laValue = interpolateValue.f
+	(
+		laTime,
+		table.get(laIndex).time,
+		table.get(laIndex+1).time,
+		table.get(laIndex).value,
+		table.get(laIndex+1).value
+	);
+}
+else
+{
+	// Error ist thrown for the last entry
+	getEngine().error("laIndex+1<table.size())");
+}]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1617620940787</Id>
+					<Name><![CDATA[la_start]]></Name>
+					<X>700</X><Y>470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[tr.begin("" + laStep + " " + laIndex + " " + laTime + "(" + time2hour(laTime) + ")" + " " + laValue);
+laIndex = actIndex;
+laTime = actTime;
+laValue = actValue;
+tr.end("" + laStep + " " + laIndex + " " + laTime + "(" + time2hour(laTime) + ")" + " " + laValue);]]></Body>
+				</Function>
+			</Functions>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1612128688950</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<EmbeddedObjects>
+				<EmbeddedObject>
+					<Id>1612128688899</Id>
+					<Name><![CDATA[i7_AC_L1_TimeSeriesValue__]]></Name>
+					<X>-700</X><Y>70</Y>
+					<Label><X>0</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+						<ClassName><![CDATA[I7_AI_Interface]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+							<ClassName><![CDATA[I7_AI_Interface]]></ClassName>
+							<ItemName><![CDATA[1495120400183]]></ItemName>
+						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[I7_AC_L1_TimeSeriesValue]]></Code>
+						</GenericParameterSubstituteValue>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[Is_Filter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Toggle]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Reflection]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[return_level]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[I7_AI_Enumeration.EReturn.RETURN_CURRENT_LEVEL]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[filter_level]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Conf_Component]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[exclude_type]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[After_Filter_Round]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Start_Component]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Left]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[out]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Right]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Filter_Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Re_Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Before_Filter_Round]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Ports]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+	Map.entry("out", out)
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Descriptor]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[descriptor]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Label]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[label]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[ReLabel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Show]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[show]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[get_]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+	Map.entry("factor", ()->factor),
+	Map.entry("timeTable", ()->timeTable),
+	Map.entry("timeStart", ()->timeStart),
+	Map.entry("actValue", ()->actValue),
+	Map.entry("laValue", ()->laValue)
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[set_]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+	Map.entry("factor", (IRel1<Double>) v->set_factor(v)),
+	Map.entry("set_step", (IRel1<Long>) v->set_step(v)),
+	Map.entry("timeTable", (IRel1<ArrayList<I7_AC_L1_TimeTableLine>>) v->timeTable=v),
+	Map.entry("timeStart", (IRel1<Long>) v->set_timeStart(v)),
+	Map.entry("la_set_step", (IRel1<Long>) (v)->la_set_step(v))
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[calc_]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+	Map.entry("init0", (IRel0) ()->init0()),
+	Map.entry("la_start", (IRel0) ()->la_start()),
+	Map.entry("calc_step", (IRel0) ()->calc_step()),
+	Map.entry("la_calc_step", (IRel0) ()->la_calc_step())
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[func_]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[get_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[set_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[calc_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[func_default]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1612128688903</Id>
+					<Name><![CDATA[tr]]></Name>
+					<X>850</X><Y>500</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+						<ClassName><![CDATA[I7_AI_Trace]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+							<ClassName><![CDATA[I7_AI_Trace]]></ClassName>
+							<ItemName><![CDATA[1554463658287]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[Trace]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[do_trace]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Index]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[my_trace]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1681840656799</Id>
+					<Name><![CDATA[i7_AS_TimeUtility__]]></Name>
+					<X>-700</X><Y>420</Y>
+					<Label><X>0</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+						<ClassName><![CDATA[I7_AI_Interface]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+							<ClassName><![CDATA[I7_AI_Interface]]></ClassName>
+							<ItemName><![CDATA[1495120400183]]></ItemName>
+						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[I7_AS_TimeUtility]]></Code>
+						</GenericParameterSubstituteValue>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[Is_Filter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Toggle]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Reflection]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[return_level]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[I7_AI_Enumeration.EReturn.RETURN_CURRENT_LEVEL]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[filter_level]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Conf_Component]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[exclude_type]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[After_Filter_Round]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Start_Component]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Left]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[out]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Right]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Filter_Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Re_Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Before_Filter_Round]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Ports]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Descriptor]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[{
+	{"component", "I7_AS_TimeUtility"}
+}]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[ReLabel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Show]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[get_]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+//	Map.entry("actms", ()->actms()),
+//	Map.entry("acti7astime", ()->acti7astime()),
+//	Map.entry("beforeacti7astime", ()->beforeacti7astime())
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[set_]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[calc_]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[func_]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+//	Map.entry("ymdhm2date", (IFunc5<Integer, Integer, Integer, Integer, Integer, Date>) (year, month, day, hour, minute)->ymdhm2date(year, month, day, hour, minute)),
+//	Map.entry("ms2i7astime", (IFunc1<Long, I7_AS_Time>) (ms)->ms2i7astime(ms)),
+//	Map.entry("ymdhm2ms", (IFunc5<Integer, Integer, Integer, Integer, Integer, Long>) (year, month, day, hour, minute)->ymdhm2ms(year, month, day, hour, minute)),
+	//Map.entry("i7astime2ms", (IFunc1<I7_AS_Time, Long>) (ttime)->i7astime2ms(ttime)),
+	Map.entry("interpolateValue", (IFunc5<Long, Long, Long, Double, Double, Double>) (x, x1, x2, y1, y2)->null)
+//	Map.entry("hour2ms", (IFunc1<Double, Long>) (hour)->hour2ms(hour)),
+//	Map.entry("min2ms", (IFunc1<Double, Long>) (minute)->min2ms(minute)),
+//	Map.entry("sec2ms", (IFunc1<Double, Long>) (second)->sec2ms(second))
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[get_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[set_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[calc_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[func_default]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+			</EmbeddedObjects>
+
+			<Presentation>
+				<Level>
+					<Id>1612128688875</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>ALWAYS_SHOW</LevelVisibility>
+
+			<Presentation>
+				<Rectangle>
+					<Id>1681842239662</Id>
+					<Name><![CDATA[rectangle]]></Name>
+					<X>-200</X><Y>-130</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[return true;]]></OnClickCode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>150</Width>
+					<Height>60</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<RoundedRectangle>
+					<Id>1612128688879</Id>
+					<Name><![CDATA[roundRectangle]]></Name>
+					<X>-720</X><Y>30</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>690</Width>
+					<Height>340</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor/>
+					<FillMaterial>null</FillMaterial>
+					<ArcRadius>10</ArcRadius>
+				</RoundedRectangle>
+				<Text>
+					<Id>1612128688889</Id>
+					<Name><![CDATA[text5]]></Name>
+					<X>650</X><Y>680</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Graph]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1612128688891</Id>
+					<Name><![CDATA[button]]></Name>
+					<X>50</X><Y>10</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[getExperimentHost().setPresentable(getRootAgent());]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[Main]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+    			<TimePlot>
+					<Id>1617527010257</Id>
+					<Name><![CDATA[plot1]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>50</X><Y>690</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1602921600000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[I7_AS_Parameter.graph_recurrence_time_minute]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>1290</Width>
+					<Height>200</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>10</YOffset>
+						<Width>1100</Width>
+						<Height>160</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>EAST</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>120</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>HOUR</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
+					<VerScaleType>AUTO</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>STEP</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[actValue]]></Title>
+					<Id>1681840555511</Id>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-2354116</Color>
+					<Expression2><![CDATA[actValue]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>28801</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[I7_AS_Parameter.graph_time_window_hour]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>dd_MM_HH_mm</LabelFormat>
+    			</TimePlot>
+				<Text>
+					<Id>1681842239650</Id>
+					<Name><![CDATA[text4]]></Name>
+					<X>-125</X><Y>-85</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[ ]]></Text>
+					<TextCode><![CDATA[i7_AC_L1_TimeSeriesValue__.get_species()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1681842239652</Id>
+					<Name><![CDATA[text2]]></Name>
+					<X>-125</X><Y>-115</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[TimeSeriesValue]]></Text>
+					<TextCode><![CDATA[i7_AC_L1_TimeSeriesValue__.get_family()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1681842239660</Id>
+					<Name><![CDATA[text3]]></Name>
+					<X>-125</X><Y>-100</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[ ]]></Text>
+					<TextCode><![CDATA[i7_AC_L1_TimeSeriesValue__.get_genus()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1681842239664</Id>
+					<Name><![CDATA[text1]]></Name>
+					<X>-125</X><Y>-130</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[i7_AC_L1_Comp]]></Text>
+					<TextCode><![CDATA[i7_AC_L1_TimeSeriesValue__.get_order()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1681843634908</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>710</X><Y>110</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[la: look ahead]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+	</ActiveObjectClasses>	
+	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
+	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
+	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
+	<AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+	<FixedTimeStep>0.001</FixedTimeStep>
+	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
+	<TimeAccuracy>1.0E-5</TimeAccuracy>
+	<Frame>
+		<Width>1000</Width>
+		<Height>600</Height>
+	</Frame>
+	<Database>
+		<Logging>false</Logging>
+		<AutoExport>false</AutoExport>
+		<ShutdownCompact>false</ShutdownCompact>
+		<ImportSettings>
+		</ImportSettings>
+		<ExportSettings>
+		</ExportSettings>
+	</Database>
+	
+	<RunConfiguration ActiveObjectClassId="1612128688847">
+		<Id>1603810170166</Id>
+		<Name><![CDATA[RunConfiguration]]></Name>
+		<MaximumMemory>512</MaximumMemory>
+		<ModelTimeProperties>
+			<StopOption><![CDATA[Stop at specified time]]></StopOption>
+			<InitialDate><![CDATA[1603756800000]]></InitialDate>	
+			<InitialTime><![CDATA[0.0]]></InitialTime>	
+			<FinalDate><![CDATA[1606435200000]]></FinalDate>	
+			<FinalTime><![CDATA[100.0]]></FinalTime>	
+		</ModelTimeProperties>
+		<AnimationProperties>
+			<StopNever>true</StopNever>
+			<ExecutionMode>realTimeScaled</ExecutionMode>
+			<RealTimeScale>1.0</RealTimeScale>
+			<EnableZoomAndPanning>true</EnableZoomAndPanning>
+			<EnableDeveloperPanel>false</EnableDeveloperPanel>
+			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+		</AnimationProperties>
+		<Inputs>		
+		</Inputs>
+		<Outputs>
+		</Outputs>
+	</RunConfiguration>
+	<JavaClasses>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1612128700034</Id>
+			<Name><![CDATA[I7_AC_L1_TimeTableLine]]></Name>
+			<Text><![CDATA[/**
+ * I7_AC_L1_TimeTableLine
+ */	
+
+import de.fau.i7.anyenergy.anysystem.table.I7_AS_IRowTableLine;
+import de.fau.i7.anyenergy.anysystem.file.I7_AS_ReadFile;
+import de.fau.i7.anyenergy.anysystem.file.I7_AS_WriteFile;
+
+public class I7_AC_L1_TimeTableLine implements I7_AS_IRowTableLine, java.io.Serializable {
+
+	public int year;
+	public int month;
+	public int day;
+	public int hour;
+	public int minute;
+
+	public double value;
+	public int idx;
+
+    /**
+     * Default constructor
+     */
+    public I7_AC_L1_TimeTableLine() {
+    }
+
+    public I7_AC_L1_TimeTableLine(I7_AC_L1_TimeTableLine ttl) {		
+    	this.year = ttl.year;
+    	this.month = ttl.month;
+    	this.day = ttl.day;
+    	this.hour = ttl.hour;
+    	this.minute = ttl.minute;
+
+    	this.value = ttl.value;
+		this.idx = ttl.idx;
+    }	
+
+    /**
+     * Constructor initializing the fields
+     */
+    public I7_AC_L1_TimeTableLine(int year, int month, int day, int hour, int minute, double value, int idx) {		
+    	this.year = year;
+    	this.month = month;
+    	this.day = day;
+    	this.hour = hour;
+    	this.minute = minute;
+
+    	this.value = value;
+		this.idx = idx;
+    }	
+	
+    public static I7_AC_L1_TimeTableLine readLine(I7_AS_ReadFile tk, int idx)
+    {
+    	// year
+    	int year = Integer.parseInt(tk.tokt());
+
+    	// month
+    	int month = Integer.parseInt(tk.tokt()) - 1;
+
+    	// day
+    	int day = Integer.parseInt(tk.tokt());
+
+    	// hour
+    	int hour = Integer.parseInt(tk.tokt());
+
+    	// minute
+    	int minute = Integer.parseInt(tk.tokt());
+
+    	// value
+    	double value = Double.parseDouble(tk.tokt());
+
+    	// return line
+    	I7_AC_L1_TimeTableLine tmpTableLine = new I7_AC_L1_TimeTableLine(year, month, day, hour, minute, value, idx);
+    	return tmpTableLine;
+    }
+    
+    public void writeLine(I7_AS_WriteFile wf)
+    {
+    	// year
+    	wf.prints(year);
+
+    	// month
+    	wf.printfs("%02d", month + 1);
+
+    	// day
+    	wf.printfs("%02d", day);
+
+    	// hour
+    	wf.printfs("%02d", hour);
+
+    	// minute
+    	wf.printfs("%02d", minute);
+
+
+    	// value
+    	wf.printps(value);
+    }
+    
+	@Override
+	public String toString()
+	{			
+
+		return "" + year + "." + month + "." + day + " " + hour + ":" + minute + " " + value + " " + idx;
+
+		//return super.toString();
+	}
+
+	/**
+	 * This number is here for model snapshot storing purpose<br>
+	 * It needs to be changed when this class gets changed
+	 */ 
+	private static final long serialVersionUID = 1L;
+
+}]]></Text>
+		</JavaClass>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1612128700059</Id>
+			<Name><![CDATA[I7_AC_L1_TimeValueEntry]]></Name>
+			<Text><![CDATA[/**
+ * I7_AC_L1_TimeValueEntry
+ */	
+
+public class I7_AC_L1_TimeValueEntry implements java.io.Serializable {
+
+	public long time;
+	public double value;
+
+	public int timeIdx;
+	
+	public int idx;
+
+    /**
+     * Default constructor
+     */
+    public I7_AC_L1_TimeValueEntry() {
+    }
+
+    public I7_AC_L1_TimeValueEntry(I7_AC_L1_TimeValueEntry ttl) {		
+    	this.time = ttl.time;
+    	this.value = ttl.value;
+
+    	this.timeIdx = ttl.timeIdx;
+    	
+    	this.idx = ttl.idx;
+    }	
+
+    /**
+     * Constructor initializing the fields
+     */
+    public I7_AC_L1_TimeValueEntry(long time, double value, int timeIdx, int idx) {		
+    	this.time = time;
+    	this.value = value;
+
+    	this.timeIdx = timeIdx;
+    	
+    	this.idx = idx;
+    }	
+    
+	@Override
+	public String toString()
+	{			
+
+		return "" + time + " " + value + " " + timeIdx + " " + idx;
+
+		//return super.toString();
+	}
+
+	/**
+	 * This number is here for model snapshot storing purpose<br>
+	 * It needs to be changed when this class gets changed
+	 */ 
+	private static final long serialVersionUID = 1L;
+
+}]]></Text>
+		</JavaClass>
+	</JavaClasses>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></LibraryName>
+		<VersionMajor>0</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></LibraryName>
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[de.fau.i7.anyenergy.anysystem.timer]]></LibraryName>
+		<VersionMajor>0</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[de.fau.i7.anyenergy.anysystem.table]]></LibraryName>
+		<VersionMajor>0</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[de.fau.i7.anyenergy.anysystem.system]]></LibraryName>
+		<VersionMajor>0</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[de.fau.i7.anyenergy.anysystem.file]]></LibraryName>
+		<VersionMajor>0</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+</Model>
+</AnyLogicWorkspace>

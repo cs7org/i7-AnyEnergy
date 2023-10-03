@@ -1,0 +1,5 @@
+id;type;demand;pv;battery;controller;energycell;topcell
+agg1_h_0;House;d1_h_0;pv1_h_0;b1_h_0;c1_h_0;h1_0;false
+agg1_g_0;Grid;d1_g_0;pv1_g_0;h1_0;c1_g_0;g1_0;true
+agg2_h_0;House;d2_h_0;pv2_h_0;b2_h_0;c2_h_0;h2_0;false
+agg2_g_0;Grid;d2_g_0;pv2_g_0;h2_0;c2_g_0;g2_0;true

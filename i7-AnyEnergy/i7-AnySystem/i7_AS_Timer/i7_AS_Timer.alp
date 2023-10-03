@@ -1,0 +1,4875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*************************************************
+	         AnyLogic Project File 
+*************************************************	         
+-->
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.2.202303221150" AlpVersion="8.7.7">
+<Model>
+	<Id>1554923699406</Id>
+	<Name><![CDATA[i7_AS_Timer]]></Name>
+	<Description><![CDATA[// MIT License
+// 
+// Copyright (c) 2023 Computer Science 7 - FAU
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.]]></Description>
+	<EngineVersion>6</EngineVersion>
+	<JavaPackageName><![CDATA[de.fau.i7.anyenergy.anysystem.timer]]></JavaPackageName>
+	<ModelTimeUnit><![CDATA[Hour]]></ModelTimeUnit>
+	<ActiveObjectClasses>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1554923714932</Id>
+			<Name><![CDATA[I7_AS_Timer]]></Name>
+			<AdditionalClassCode><![CDATA[// MIT License
+// 
+// Copyright (c) 2023 Computer Science 7 - FAU
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.]]></AdditionalClassCode>
+			<StartupCode><![CDATA[//TimeZone time_zone_default = TimeZone.getTimeZone("GMT+1");
+//TimeZone.setDefault(time_zone_default);]]></StartupCode>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1554923714927</Id>
+				<Name><![CDATA[1554923714927]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1519459200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1554923714928</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1610541626378</CurrentLevel>
+			<ConnectionsId>1554923715084</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1554923714968</Id>
+					<Name><![CDATA[actCalendar]]></Name>
+					<X>100</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Calendar]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[Calendar.getInstance();
+//TimeZone.getTimeZone("GMT+1")]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714970</Id>
+					<Name><![CDATA[anyLogicDate]]></Name>
+					<X>100</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714972</Id>
+					<Name><![CDATA[nextDayTime]]></Name>
+					<X>550</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714974</Id>
+					<Name><![CDATA[nextMinuteTime]]></Name>
+					<X>550</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714976</Id>
+					<Name><![CDATA[nextCalendar]]></Name>
+					<X>100</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Calendar]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[Calendar.getInstance();
+//TimeZone.getTimeZone("GMT+1")]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714978</Id>
+					<Name><![CDATA[daysOfMonth]]></Name>
+					<X>100</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714980</Id>
+					<Name><![CDATA[actYear]]></Name>
+					<X>250</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714982</Id>
+					<Name><![CDATA[actMonth]]></Name>
+					<X>250</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714984</Id>
+					<Name><![CDATA[actDay]]></Name>
+					<X>250</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714986</Id>
+					<Name><![CDATA[actHour]]></Name>
+					<X>250</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714988</Id>
+					<Name><![CDATA[actMinute]]></Name>
+					<X>250</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714990</Id>
+					<Name><![CDATA[nextYear]]></Name>
+					<X>400</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714992</Id>
+					<Name><![CDATA[nextMonth]]></Name>
+					<X>400</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714994</Id>
+					<Name><![CDATA[nextDay]]></Name>
+					<X>400</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714996</Id>
+					<Name><![CDATA[nextHour]]></Name>
+					<X>400</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923714998</Id>
+					<Name><![CDATA[nextMinute]]></Name>
+					<X>400</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923715000</Id>
+					<Name><![CDATA[nextHourTime]]></Name>
+					<X>550</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923715002</Id>
+					<Name><![CDATA[nextWeekTime]]></Name>
+					<X>550</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923715004</Id>
+					<Name><![CDATA[nextYearTime]]></Name>
+					<X>550</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923715006</Id>
+					<Name><![CDATA[nextMonthTime]]></Name>
+					<X>550</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923715008</Id>
+					<Name><![CDATA[nextQuarterHourTime]]></Name>
+					<X>550</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923715010</Id>
+					<Name><![CDATA[nextTickTime]]></Name>
+					<X>100</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1554923715012</Id>
+					<Name><![CDATA[actTime]]></Name>
+					<X>100</X><Y>260</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[I7_AS_Time]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new I7_AS_Time()]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1592323140204</Id>
+					<Name><![CDATA[actSecond]]></Name>
+					<X>250</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1592323145627</Id>
+					<Name><![CDATA[actMillisecond]]></Name>
+					<X>250</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1592730276562</Id>
+					<Name><![CDATA[nextSecond]]></Name>
+					<X>400</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1592730276586</Id>
+					<Name><![CDATA[nextMillisecond]]></Name>
+					<X>400</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1592730800788</Id>
+					<Name><![CDATA[nextSecondTime]]></Name>
+					<X>550</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1592730804972</Id>
+					<Name><![CDATA[nextMillisecondTime]]></Name>
+					<X>550</X><Y>660</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1592730953481</Id>
+					<Name><![CDATA[nextTenSecondTime]]></Name>
+					<X>550</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1593337780352</Id>
+					<Name><![CDATA[nextFree1Time]]></Name>
+					<X>550</X><Y>700</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1598694068367</Id>
+					<Name><![CDATA[nextFree2Time]]></Name>
+					<X>550</X><Y>740</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Date]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1598696601850</Id>
+					<Name><![CDATA[FreeTickActive]]></Name>
+					<X>1350</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1614163721390</Id>
+					<Name><![CDATA[tickFree1_step]]></Name>
+					<X>1100</X><Y>700</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[long]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1614163761061</Id>
+					<Name><![CDATA[tickFree2_step]]></Name>
+					<X>1100</X><Y>740</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[long]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1681584922622</Id>
+					<Name><![CDATA[m_int_ext_tick]]></Name>
+					<X>400</X><Y>20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ArrayList<IRel1<I7_AS_EnumTimer.EMessage>>]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1592332776868</Id>
+					<Name><![CDATA[tickMillisecond]]></Name>
+					<X>750</X><Y>660</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1592332776866</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATE_SECTION</DelimeterType>
+							<StartSection><![CDATA[Ticks]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1592332761031</Id>
+					<Name><![CDATA[tickSecond]]></Name>
+					<X>750</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1592332761029</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1592731248600</Id>
+					<Name><![CDATA[tickTenSecond]]></Name>
+					<X>750</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1592731248598</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1554923715052</Id>
+					<Name><![CDATA[tickMinute]]></Name>
+					<X>750</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[true]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1554923715050</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1554923715055</Id>
+					<Name><![CDATA[tickQuarterHour]]></Name>
+					<X>750</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1554923715053</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1554923715058</Id>
+					<Name><![CDATA[tickHour]]></Name>
+					<X>750</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1554923715056</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1554923715061</Id>
+					<Name><![CDATA[tickDay]]></Name>
+					<X>750</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1554923715059</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1554923715064</Id>
+					<Name><![CDATA[tickWeek]]></Name>
+					<X>750</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1554923715062</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1554923715067</Id>
+					<Name><![CDATA[tickMonth]]></Name>
+					<X>750</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1554923715065</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1554923715070</Id>
+					<Name><![CDATA[tickYear]]></Name>
+					<X>750</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1554923715068</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1554923715076</Id>
+					<Name><![CDATA[tickStart]]></Name>
+					<X>900</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1554923715074</Id>
+							<Label><![CDATA[tickStart]]></Label>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1596468921687</Id>
+					<Name><![CDATA[tickFree1_check]]></Name>
+					<X>750</X><Y>700</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[SECOND]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1596468921685</Id>
+							<Label><![CDATA[tickFree1_check]]></Label>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<PredefParamValue>
+								<Id>1596468921682</Id>
+								<Name><![CDATA[checked]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[boolean]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1596468921683</Id>
+								<Name><![CDATA[Unit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[String]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1596468921684</Id>
+								<Name><![CDATA[value]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[int]]></Code>
+								</Value>
+							</PredefParamValue>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATE_SECTION</DelimeterType>
+							<StartSection><![CDATA[Free tick 1]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1596468894586</Id>
+					<Name><![CDATA[tickFree1_unit]]></Name>
+					<X>850</X><Y>700</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[SECOND]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[3]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1596468894584</Id>
+							<Label><![CDATA[tickFree1_Dim]]></Label>
+							<EditorContolType>COMBO</EditorContolType>
+							<PredefParamValue>
+								<Id>1596468894581</Id>
+								<Name><![CDATA[Millisecond]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[0]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1596468894582</Id>
+								<Name><![CDATA[Second]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[1]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1596468894583</Id>
+								<Name><![CDATA[Minute]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>0</Id>
+								<Name><![CDATA[Hour]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[3]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>0</Id>
+								<Name><![CDATA[Day]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>0</Id>
+								<Name><![CDATA[Month]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[5]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>0</Id>
+								<Name><![CDATA[Year]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[6]]></Code>
+								</Value>
+							</PredefParamValue>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1596468901950</Id>
+					<Name><![CDATA[tickFree1_value]]></Name>
+					<X>950</X><Y>700</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[SECOND]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1596468901948</Id>
+							<Label><![CDATA[tickFree1_Value]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<PredefParamValue>
+								<Id>1596468901945</Id>
+								<Name><![CDATA[Value]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[0]]></Code>
+								</Value>
+							</PredefParamValue>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1598694024583</Id>
+					<Name><![CDATA[tickFree2_check]]></Name>
+					<X>750</X><Y>740</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[SECOND]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1598694024581</Id>
+							<Label><![CDATA[tickFree2_check]]></Label>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<PredefParamValue>
+								<Id>1598694024578</Id>
+								<Name><![CDATA[checked]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[boolean]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1598694024579</Id>
+								<Name><![CDATA[Unit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[String]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1598694024580</Id>
+								<Name><![CDATA[value]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[int]]></Code>
+								</Value>
+							</PredefParamValue>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATE_SECTION</DelimeterType>
+							<StartSection><![CDATA[Free tick 2]]></StartSection>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1598694024601</Id>
+					<Name><![CDATA[tickFree2_unit]]></Name>
+					<X>850</X><Y>740</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[SECOND]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[3]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1598694024599</Id>
+							<Label><![CDATA[tickFree2_Dim]]></Label>
+							<EditorContolType>COMBO</EditorContolType>
+							<PredefParamValue>
+								<Id>1598694024592</Id>
+								<Name><![CDATA[Millisecond]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[0]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1598694024593</Id>
+								<Name><![CDATA[Second]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[1]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1598694024594</Id>
+								<Name><![CDATA[Minute]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1598694024595</Id>
+								<Name><![CDATA[Hour]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[3]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1598694024596</Id>
+								<Name><![CDATA[Day]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1598694024597</Id>
+								<Name><![CDATA[Month]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[5]]></Code>
+								</Value>
+							</PredefParamValue>
+							<PredefParamValue>
+								<Id>1598694024598</Id>
+								<Name><![CDATA[Year]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[6]]></Code>
+								</Value>
+							</PredefParamValue>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1598694024605</Id>
+					<Name><![CDATA[tickFree2_value]]></Name>
+					<X>950</X><Y>740</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<UnitOfValue Class="TimeUnits"><![CDATA[SECOND]]></UnitOfValue>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1598694024603</Id>
+							<Label><![CDATA[tickFree2_Value]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<PredefParamValue>
+								<Id>1598694024602</Id>
+								<Name><![CDATA[Value]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[0]]></Code>
+								</Value>
+							</PredefParamValue>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<Ports>
+				<Port>
+					<Id>1554923715049</Id>
+					<Name><![CDATA[out]]></Name>
+					<X>-200</X><Y>-100</Y>
+					<Label><X>5</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<IncomingMessageType><![CDATA[Object]]></IncomingMessageType>
+					<OutgoingMessageType><![CDATA[Object]]></OutgoingMessageType>
+					<CustomPort><![CDATA[false]]></CustomPort>
+				</Port>
+			</Ports>
+			<Events>
+				<Event>
+					<Id>1554923715047</Id>
+					<Name><![CDATA[timer]]></Name>
+					<X>150</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="userControls">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MILLISECOND]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1479542400000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[//traceln("Timer");
+updateTime();
+]]></Action>
+				</Event>
+			</Events>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714934</Id>
+					<Name><![CDATA[updateTime]]></Name>
+					<X>100</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln(time() + " Update timer");
+setActCalendar();
+
+setNextTimes();
+
+setNextTickTime();
+
+if(nextTickTime!=null)
+{
+	timer.restartTo(nextTickTime);
+}
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714936</Id>
+					<Name><![CDATA[setActCalendar]]></Name>
+					<X>250</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("setActCalendar");
+
+actYear = getYear();
+actMonth = getMonth();
+actDay = getDayOfMonth();
+actHour = getHourOfDay();
+actMinute = getMinute();
+actSecond = getSecond();
+actMillisecond = getMillisecond();
+
+actCalendar.set(actYear, actMonth, actDay, actHour, actMinute, actSecond);
+actCalendar.set( Calendar.MILLISECOND, actMillisecond );
+
+anyLogicDate = actCalendar.getTime();
+daysOfMonth = actCalendar.getActualMaximum(Calendar.DATE);
+actTime.set(actCalendar);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714938</Id>
+					<Name><![CDATA[calcNextMinuteTime]]></Name>
+					<X>550</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("calcNextMinuteTime");
+
+nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+//traceln("actMinute: "+actMinute+"; nextMinute: "+nextMinute);
+
+nextMinute = nextMinute + 1;
+
+//traceln("nextMinute+1: "+ nextMinute);
+
+if(nextMinute>59)
+{
+	nextMinute = nextMinute - 60;
+	++nextHour;
+}
+if(nextHour>23)
+{
+	nextHour = 0;
+	++nextDay;
+}
+if(nextDay>daysOfMonth)
+{
+	nextDay -= daysOfMonth;
+	++nextMonth;
+}
+if(nextMonth>11)
+{
+	nextMonth = 0;
+	++nextYear;
+}
+
+//traceln("NEW: nextMinute: "+nextMinute+"; nextHour: "+nextHour);
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+//traceln(nextCalendar);
+
+nextMinuteTime = nextCalendar.getTime();
+
+//traceln(nextMinuteTime);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714940</Id>
+					<Name><![CDATA[setNextTimes]]></Name>
+					<X>250</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("setNextTimes");
+
+clearNextTimes();
+
+if(tickStart)
+{
+	//traceln("START_1");
+	setMessage(I7_AS_EnumTimer.EMessage.TICK_START_1);
+	//tickStart = false;
+}
+
+setNextFreeTimes(6, 1, -1, 0);
+if(tickYear)
+{
+	if(nextYearTime==null || nextYearTime.equals(nextTickTime))
+	{
+		//traceln("YEAR");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_YEAR_1);
+		//calcNextYearTime();
+	}
+}
+
+setNextFreeTimes(5, 1, -1, 0);
+
+if(tickMonth)
+{
+	if(nextMonthTime==null || nextMonthTime.equals(nextTickTime))
+	{
+		//traceln("MONTH");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_MONTH_1);
+		//calcNextMonthTime();
+	}
+}
+
+setNextFreeTimes(4, 1, -1, 6);
+
+if(tickWeek)
+{
+	if(nextWeekTime==null || nextWeekTime.equals(nextTickTime))
+	{
+		//traceln("WEEK");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_WEEK_1);
+		//calcNextWeekTime();
+	}
+}
+
+setNextFreeTimes(4, 1, 7, 0);
+
+if(tickDay)
+{
+	if(nextDayTime==null || nextDayTime.equals(nextTickTime))
+	{
+		//traceln("DAY");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_DAY_1);
+		//calcNextDayTime();
+	}
+}
+
+setNextFreeTimes(3, 1, -1, 0);
+
+if(tickHour)
+{
+	if(nextHourTime==null || nextHourTime.equals(nextTickTime))
+	{
+		//traceln("HOUR_1");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_HOUR_1);
+		//calcNextHourTime();
+	}
+}
+
+setNextFreeTimes(2, 1, -1, 14);
+
+if(tickQuarterHour)
+{
+	if(nextQuarterHourTime==null || nextQuarterHourTime.equals(nextTickTime))
+	{
+		//traceln("QUARTERHOUR_1");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_QUARTER_1);
+		//calcNextQuarterHourTime();
+	}
+}
+
+setNextFreeTimes(2, 1, 15, 0);
+
+if(tickMinute)
+{
+	if(nextMinuteTime==null || nextMinuteTime.equals(nextTickTime))
+	{
+		//traceln("MINUTE_1");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_MINUTE_1);
+		//calcNextMinuteTime();
+	}
+}
+
+setNextFreeTimes(1, 1, -1, 9);
+
+if(tickTenSecond)
+{
+	if(nextTenSecondTime==null || nextTenSecondTime.equals(nextTickTime))
+	{
+		//traceln("TEN_SECOND_1");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_TEN_SECOND_1);
+		//calcNextTenSecondTime();
+	}
+}
+
+setNextFreeTimes(1, 1, 10, 0);
+
+if(tickSecond)
+{
+	if(nextSecondTime==null || nextSecondTime.equals(nextTickTime))
+	{
+		//traceln("SECOND_1");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_SECOND_1);
+		//calcNextSecondTime();
+	}
+}
+
+setNextFreeTimes(0, 1, -1, 0);
+
+if(tickMillisecond)
+{
+	if(nextMillisecondTime==null || nextMillisecondTime.equals(nextTickTime))
+	{
+		//traceln("MILLISECOND_1");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_MILLISECOND_1);
+		//calcNextMillisecondTime();
+	}
+}
+
+if(tickMillisecond)
+{
+	if(nextMillisecondTime==null || nextMillisecondTime.equals(nextTickTime))
+	{
+		//traceln("MILLISECOND_2");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_MILLISECOND_2);
+		calcNextMillisecondTime();
+	}
+}
+
+setNextFreeTimes(0, 2, -1, 0);
+
+
+if(tickSecond)
+{
+	if(nextSecondTime==null || nextSecondTime.equals(nextTickTime))
+	{
+		//traceln("SECOND_2");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_SECOND_2);
+		calcNextSecondTime();
+	}
+}
+
+setNextFreeTimes(1, 2, 10, 0);
+
+if(tickTenSecond)
+{
+	if(nextTenSecondTime==null || nextTenSecondTime.equals(nextTickTime))
+	{
+		//traceln("TEN_SECOND_2");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_TEN_SECOND_2);
+		calcNextTenSecondTime();
+	}
+}
+
+setNextFreeTimes(1, 2, -1, 9);
+
+if(tickMinute)
+{
+	if(nextMinuteTime==null || nextMinuteTime.equals(nextTickTime))
+	{
+		//traceln("MINUTE_2");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_MINUTE_2);
+		calcNextMinuteTime();
+	}
+}
+
+setNextFreeTimes(2, 2, 15, 0);
+
+if(tickQuarterHour)
+{
+	if(nextQuarterHourTime==null || nextQuarterHourTime.equals(nextTickTime))
+	{
+		//traceln("QUARTERHOUR");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_QUARTER_2);
+		calcNextQuarterHourTime();
+	}
+}
+
+setNextFreeTimes(2, 2, -1, 14);
+
+if(tickHour)
+{
+	if(nextHourTime==null || nextHourTime.equals(nextTickTime))
+	{
+		//traceln("HOUR");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_HOUR_2);
+		calcNextHourTime();
+	}
+}
+
+setNextFreeTimes(3, 2, -1, 0);
+
+if(tickDay)
+{
+	if(nextDayTime==null || nextDayTime.equals(nextTickTime))
+	{
+		//traceln("DAY");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_DAY_2);
+		calcNextDayTime();
+	}
+}
+
+setNextFreeTimes(4, 2, 7, 0);
+
+if(tickWeek)
+{
+	if(nextWeekTime==null || nextWeekTime.equals(nextTickTime))
+	{
+		//traceln("WEEK");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_WEEK_2);
+		calcNextWeekTime();
+	}
+}
+
+setNextFreeTimes(4, 2, -1, 6);
+
+if(tickMonth)
+{
+	if(nextMonthTime==null || nextMonthTime.equals(nextTickTime))
+	{
+		//traceln("MONTH");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_MONTH_2);
+		calcNextMonthTime();
+	}
+}
+
+setNextFreeTimes(5, 2, -1, 0);
+
+if(tickYear)
+{
+	if(nextYearTime==null || nextYearTime.equals(nextTickTime))
+	{
+		//traceln("YEAR");
+		setMessage(I7_AS_EnumTimer.EMessage.TICK_YEAR_2);
+		calcNextYearTime();
+	}
+}
+
+setNextFreeTimes(6, 2, -1, 0);
+
+if(tickStart)
+{
+	//traceln("START_2");
+	setMessage(I7_AS_EnumTimer.EMessage.TICK_START_2);
+	tickStart = false;
+}
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714942</Id>
+					<Name><![CDATA[setMessage]]></Name>
+					<X>400</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[value]]></Name>
+						<Type><![CDATA[I7_AS_EnumTimer.EMessage]]></Type>
+					</Parameter>
+					<Body><![CDATA[m_int_ext_tick.forEach(x->x.f(value));]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714944</Id>
+					<Name><![CDATA[calcNextQuarterHourTime]]></Name>
+					<X>750</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+nextMinute = nextMinute + 15;
+
+if(nextMinute>59)
+{
+	nextMinute = nextMinute - 60;
+	++nextHour;
+}
+if(nextHour>23)
+{
+	nextHour = 0;
+	++nextDay;
+}
+if(nextDay>daysOfMonth)
+{
+	nextDay -= daysOfMonth;
+	++nextMonth;
+}
+if(nextMonth>11)
+{
+	nextMonth = 0;
+	++nextYear;
+}
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+
+nextQuarterHourTime = nextCalendar.getTime();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714946</Id>
+					<Name><![CDATA[calcNextHourTime]]></Name>
+					<X>750</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+++nextHour;
+
+if(nextHour>23)
+{
+	nextHour = 0;
+	++nextDay;
+}
+if(nextDay>daysOfMonth)
+{
+	nextDay -= daysOfMonth;
+	++nextMonth;
+}
+if(nextMonth>11)
+{
+	nextMonth = 0;
+	++nextYear;
+}
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+
+nextHourTime = nextCalendar.getTime();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714948</Id>
+					<Name><![CDATA[calcNextDayTime]]></Name>
+					<X>750</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+++nextDay;
+
+if(nextDay>daysOfMonth)
+{
+	nextDay -= daysOfMonth;
+	++nextMonth;
+}
+if(nextMonth>11)
+{
+	nextMonth = 0;
+	++nextYear;
+}
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+
+nextDayTime = nextCalendar.getTime();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714950</Id>
+					<Name><![CDATA[calcNextWeekTime]]></Name>
+					<X>750</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+nextDay += 7;
+
+if(nextDay>daysOfMonth)
+{
+	nextDay -= daysOfMonth;
+	++nextMonth;
+}
+if(nextMonth>11)
+{
+	nextMonth = 0;
+	++nextYear;
+}
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+
+nextWeekTime = nextCalendar.getTime();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714952</Id>
+					<Name><![CDATA[calcNextMonthTime]]></Name>
+					<X>950</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+++nextMonth;
+
+if(nextMonth>11)
+{
+	nextMonth = 0;
+	++nextYear;
+}
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+
+nextMonthTime = nextCalendar.getTime();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714954</Id>
+					<Name><![CDATA[calcNextYearTime]]></Name>
+					<X>950</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+++nextYear;
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+nextYearTime = nextCalendar.getTime();
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714956</Id>
+					<Name><![CDATA[setNextTickTime]]></Name>
+					<X>250</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("setNextTickTime");
+
+// Init nextTickTime
+nextTickTime = null;
+
+if(tickMillisecond)
+{
+	nextTickTime = nextMillisecondTime;
+}
+
+setNextFreeTickTimes(0, 1, -1, 0);
+
+if(tickSecond)
+{
+	nextTickTime = nextSecondTime;
+}
+
+setNextFreeTickTimes(1, 1, 10, 0);
+
+if(tickTenSecond)
+{
+	nextTickTime = nextTenSecondTime;
+}
+
+setNextFreeTickTimes(1, 1, -1, 9);
+
+if(tickMinute)
+{
+	nextTickTime = nextMinuteTime;
+}
+
+setNextFreeTickTimes(2, 1, 15, 0);
+
+if(tickQuarterHour)
+{
+	nextTickTime = nextQuarterHourTime;
+}
+
+setNextFreeTickTimes(2, 1, -1, 14);
+
+if(tickHour)
+{
+	nextTickTime = nextHourTime;
+}
+
+setNextFreeTickTimes(3, 1, -1, 0);
+
+if(tickDay)
+{
+	nextTickTime = nextDayTime;
+}
+
+setNextFreeTickTimes(4, 1, 7, 0);
+
+if(tickWeek)
+{
+	nextTickTime = nextWeekTime;
+}
+
+setNextFreeTickTimes(4, 1, -1, 6);
+
+if(tickMonth)
+{
+	nextTickTime = nextMonthTime;
+}
+
+setNextFreeTickTimes(5, 1, -1, 0);
+
+if(tickYear)
+{
+	nextTickTime = nextYearTime;
+}
+
+setNextFreeTickTimes(6, 1, -1, 0);
+
+if(nextTickTime==null)
+{
+	if(!tickStart)
+	{
+		traceln("Timer " + this + " not used.");
+	}
+	else
+	{
+		traceln("Timer " + this + " not used for periodic ticks.");
+	}
+
+	return;
+}
+
+// calc nextTickTime
+if(tickMillisecond)
+{
+	if(nextMillisecondTime.before(nextTickTime))
+	{
+		nextTickTime = nextMillisecondTime;
+	}
+}
+
+/*nextTickTime = */setNextFreeTickTimes(0, 2, -1, 0);
+
+if(tickSecond)
+{
+	if(nextSecondTime.before(nextTickTime))
+	{
+		nextTickTime = nextSecondTime;
+	}
+}
+
+setNextFreeTickTimes(1, 2, 10, 0);
+
+if(tickTenSecond)
+{
+	if(nextTenSecondTime.before(nextTickTime))
+	{
+		nextTickTime = nextTenSecondTime;
+	}
+}
+
+setNextFreeTickTimes(1, 2, -1, 9);
+
+if(tickMinute)
+{
+	if(nextMinuteTime.before(nextTickTime))
+	{
+		nextTickTime = nextMinuteTime;
+	}
+}
+
+setNextFreeTickTimes(2, 2, 15, 0);
+
+if(tickQuarterHour)
+{
+	if(nextQuarterHourTime.before(nextTickTime))
+	{
+		nextTickTime = nextQuarterHourTime;
+	}
+}
+
+setNextFreeTickTimes(2, 2, -1, 14);
+
+if(tickHour)
+{
+	if(nextHourTime.before(nextTickTime))
+	{
+		nextTickTime = nextHourTime;
+	}
+}
+
+setNextFreeTickTimes(3, 2, -1, 0);
+
+if(tickDay)
+{
+	if(nextDayTime.before(nextTickTime))
+	{
+		nextTickTime = nextDayTime;
+	}
+}
+
+setNextFreeTickTimes(4, 2, 7, 0);
+
+if(tickWeek)
+{
+	if(nextWeekTime.before(nextTickTime))
+	{
+		nextTickTime = nextWeekTime;
+	}
+}
+
+setNextFreeTickTimes(4, 2, -1, 6);
+
+if(tickMonth)
+{
+	if(nextMonthTime.before(nextTickTime))
+	{
+		nextTickTime = nextMonthTime;
+	}
+}
+
+setNextFreeTickTimes(5, 2, -1, 0);
+
+if(tickYear)
+{
+	if(nextYearTime.before(nextTickTime))
+	{
+		nextTickTime = nextYearTime;
+	}
+}
+
+setNextFreeTickTimes(6, 2, -1, 0);
+]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714958</Id>
+					<Name><![CDATA[initializeTime]]></Name>
+					<X>100</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("Initialize timer");
+
+m_int_ext_tick = timer__.set("m_int_ext_tick");
+
+if(tickFree1_check){
+	FreeTickActive = 1;
+	setNextFree1TimeStep();
+	if(tickFree1_value < 1){
+		traceln("ERROR: tickFree1 Value must be bigger then or equal to 1; if you want to use stepsize <1, use one of the other functions");
+		getEngine().stop();
+	}
+	if(!checkValue(tickFree1_unit, tickFree1_value)){
+		getEngine().stop();
+	}
+}
+
+if(tickFree2_check){
+	setNextFree2TimeStep();
+	FreeTickActive = 1;
+	if(tickFree2_value < 1){
+		traceln("ERROR: tickFree2 Value must be bigger then or equal to 1; if you want to use stepsize <1, use one of the other functions");
+		getEngine().stop();
+	}
+	if(!checkValue(tickFree2_unit, tickFree2_value)){
+		getEngine().stop();
+	}
+}
+
+if(tickFree1_check && tickFree2_check){
+	FreeTickActive = 1;
+	if(tickFree1_unit == tickFree2_unit){
+		FreeTickActive = 2;
+		if(tickFree1_value == tickFree2_value){
+			traceln("ERROR: Values and/or Dimensions of tickFree1 and tickFree2 must be different from each other!");
+			getEngine().stop();
+		}
+	}
+}
+/*
+Calendar cal = Calendar.getInstance();
+TimeZone tz = cal.getTimeZone();
+*/
+setActCalendar();
+
+initNextTimes();
+
+setNextTickTime();
+
+
+
+if(nextTickTime!=null)
+{
+	timer.restartTo(nextTickTime);
+}
+else
+{
+	setNextTimes();
+}
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714960</Id>
+					<Name><![CDATA[initNextTimes]]></Name>
+					<X>250</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("initNextTimes");
+
+clearNextTimes();
+
+if(tickFree1_check)
+{
+	nextFree1Time = actCalendar.getTime();
+}
+
+if(tickFree2_check)
+{
+	nextFree2Time = actCalendar.getTime();
+}
+
+if(tickMillisecond)
+{
+	nextMillisecondTime = actCalendar.getTime();
+}
+
+if(tickSecond)
+{
+	nextSecondTime = actCalendar.getTime();
+}
+
+if(tickTenSecond)
+{
+	nextTenSecondTime = actCalendar.getTime();
+}
+
+if(tickMinute)
+{
+	nextMinuteTime = actCalendar.getTime();
+}
+
+if(tickQuarterHour)
+{
+	nextQuarterHourTime = actCalendar.getTime();
+}
+
+if(tickHour)
+{
+	nextHourTime = actCalendar.getTime();
+}
+
+if(tickDay)
+{
+	nextDayTime = actCalendar.getTime();
+}
+
+if(tickWeek)
+{
+	nextWeekTime = actCalendar.getTime();
+}
+
+if(tickMonth)
+{
+	nextMonthTime = actCalendar.getTime();
+}
+
+if(tickYear)
+{
+	nextYearTime = actCalendar.getTime();
+}
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1554923714962</Id>
+					<Name><![CDATA[clearNextTimes]]></Name>
+					<X>400</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if(!tickFree1_check){
+	nextFree1Time = null;
+}
+
+if(!tickFree2_check){
+	nextFree2Time = null;
+}
+
+if(!tickMillisecond)
+{
+	nextMillisecondTime = null;
+}
+
+if(!tickSecond)
+{
+	nextSecondTime = null;
+}
+
+if(!tickSecond)
+{
+	nextTenSecondTime = null;
+}
+
+if(!tickMinute)
+{
+	nextMinuteTime = null;
+}
+
+if(!tickQuarterHour)
+{
+	nextQuarterHourTime = null;
+}
+
+if(!tickHour)
+{
+	nextHourTime = null;
+}
+
+if(!tickDay)
+{
+	nextDayTime = null;
+}
+
+if(!tickWeek)
+{
+	nextWeekTime = null;
+}
+
+if(!tickMonth)
+{
+	nextMonthTime = null;
+}
+
+if(!tickYear)
+{
+	nextYearTime = null;
+}
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1592730517724</Id>
+					<Name><![CDATA[calcNextSecondTime]]></Name>
+					<X>550</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("calcNextSecondTime");
+
+nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+nextSecond = nextSecond + 1;
+
+
+if(nextSecond>59)
+{
+	nextSecond = nextSecond - 60;
+	++nextMinute;
+}
+if(nextMinute>59)
+{
+	nextMinute = 0;
+	++nextHour;
+}
+if(nextHour>23)
+{
+	nextHour = 0;
+	++nextDay;
+}
+if(nextDay>daysOfMonth)
+{
+	nextDay -= daysOfMonth;
+	++nextMonth;
+}
+if(nextMonth>11)
+{
+	nextMonth = 0;
+	++nextYear;
+}
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+
+nextSecondTime = nextCalendar.getTime();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1592730707466</Id>
+					<Name><![CDATA[calcNextMillisecondTime]]></Name>
+					<X>550</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("calcNextMillisecondTime");
+
+nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+nextMillisecond = nextMillisecond + 1;
+
+if(nextMillisecond>999)
+{
+	nextMillisecond = nextMillisecond - 1000;
+	++nextSecond;
+}
+if(nextSecond>59)
+{
+	nextSecond = nextSecond - 60;
+	++nextMinute;
+}
+if(nextMinute>59)
+{
+	nextMinute = 0;
+	++nextHour;
+}
+if(nextHour>23)
+{
+	nextHour = 0;
+	++nextDay;
+}
+if(nextDay>daysOfMonth)
+{
+	nextDay -= daysOfMonth;
+	++nextMonth;
+}
+if(nextMonth>11)
+{
+	nextMonth = 0;
+	++nextYear;
+}
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+nextMillisecondTime = nextCalendar.getTime();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1592730871027</Id>
+					<Name><![CDATA[calcNextTenSecondTime]]></Name>
+					<X>550</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("calcNextTenSecondTime");
+
+nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+nextSecond = nextSecond + 10;
+
+if(nextSecond>59)
+{
+	nextSecond = nextSecond - 60;
+	++nextMinute;
+}
+if(nextMinute>59)
+{
+	nextMinute = 0;
+	++nextHour;
+}
+if(nextHour>23)
+{
+	nextHour = 0;
+	++nextDay;
+}
+if(nextDay>daysOfMonth)
+{
+	nextDay -= daysOfMonth;
+	++nextMonth;
+}
+if(nextMonth>11)
+{
+	nextMonth = 0;
+	++nextYear;
+}
+
+//traceln(nextYear +" "+ nextMonth +" "+ nextDay +" "+ nextHour +" "+ nextMinute +" "+ nextSecond);
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+//traceln(nextCalendar.getTime());
+
+nextTenSecondTime = nextCalendar.getTime();
+//traceln("in calcNextTenSecondTime: " + nextTenSecondTime);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1593339591881</Id>
+					<Name><![CDATA[calcNextFree1Time]]></Name>
+					<X>1550</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("calcNextFree1Time");
+
+nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+switch(tickFree1_unit){
+	case 0:
+		nextMillisecond = nextMillisecond + tickFree1_value;
+		if(nextMillisecond>999)
+		{
+			nextMillisecond = nextMillisecond - 1000;
+			++nextSecond;
+		}
+		if(nextSecond>59)
+		{
+			nextSecond = nextSecond - 60;
+			++nextMinute;
+		}
+		if(nextMinute>59)
+		{
+			nextMinute = nextMinute - 60;
+			++nextHour;
+		}
+		if(nextHour>23)
+		{
+			nextHour = nextHour - 24;
+			++nextDay;
+		}
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+	
+	case 1:
+		nextSecond = nextSecond + tickFree1_value;
+		if(nextSecond>59)
+		{
+			nextSecond = nextSecond - 60;
+			++nextMinute;
+		}
+		if(nextMinute>59)
+		{
+			nextMinute = nextMinute - 60;
+			++nextHour;
+		}
+		if(nextHour>23)
+		{
+			nextHour = nextHour - 24;
+			++nextDay;
+		}
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+	
+	case 2:
+		nextMinute = nextMinute + tickFree1_value;
+		if(nextMinute>59)
+		{
+			nextMinute = nextMinute - 60;
+			++nextHour;
+		}
+		if(nextHour>23)
+		{
+			nextHour = nextHour - 24;
+			++nextDay;
+		}
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+		
+	case 3:
+		nextHour = nextHour + tickFree1_value;
+		if(nextHour>23)
+		{
+			nextHour = nextHour - 24;
+			++nextDay;
+		}
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+		
+	case 4:
+		nextDay = nextDay + tickFree1_value;
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+		
+	case 5:
+		nextMonth = nextMonth + tickFree1_value;
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+		
+	case 6:
+		nextYear = nextYear + tickFree1_value;
+		break;
+		
+	default:
+		traceln("ERROR in switch case in calcNextFree1Time");
+		break;
+}
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+nextFree1Time = nextCalendar.getTime();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1596468807824</Id>
+					<Name><![CDATA[setNextFree1Times]]></Name>
+					<X>1150</X><Y>100</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[unit]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[phase]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[upper_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lower_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[if(tickFree1_check && tickFree1_unit == unit){
+	if(tickFree1_value > lower_bound && (upper_bound == -1 || tickFree1_value < upper_bound)){
+		if(nextFree1Time==null || nextFree1Time.equals(nextTickTime))
+		{
+			//traceln("FREE1");
+			if(phase == 1){
+				setMessage(I7_AS_EnumTimer.EMessage.TICK_FREE1_1);
+			}
+			if(phase == 2){
+				setMessage(I7_AS_EnumTimer.EMessage.TICK_FREE1_2);
+				calcNextFree1Time();
+			}
+		}
+	}
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[Date]]></ReturnType>
+					<Id>1596471889796</Id>
+					<Name><![CDATA[setNextFree1TickTime]]></Name>
+					<X>1150</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[unit]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[phase]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[upper_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lower_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[if(phase == 1){
+	if(tickFree1_check && tickFree1_unit  == unit){
+		if(tickFree1_value > lower_bound && (upper_bound == -1 || tickFree1_value < upper_bound)){
+			nextTickTime = nextFree1Time;
+		}
+	}
+	return null;
+}else{
+	if(tickFree1_check && tickFree1_unit  == unit){
+		if(tickFree1_value > lower_bound && (upper_bound == -1 || tickFree1_value < upper_bound)){
+			if(nextFree1Time.before(nextTickTime))
+			{
+				return nextFree1Time;
+			}
+		}
+	}
+	return nextTickTime;
+}
+	]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1598694097154</Id>
+					<Name><![CDATA[setNextFree2Times]]></Name>
+					<X>1150</X><Y>180</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[unit]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[phase]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[upper_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lower_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[if(tickFree2_check && tickFree2_unit == unit){
+	if(tickFree2_value > lower_bound && (upper_bound == -1 || tickFree2_value < upper_bound)){
+		if(nextFree2Time==null || nextFree2Time.equals(nextTickTime))
+		{
+			//traceln("FREE1");
+			if(phase == 1){
+				setMessage(I7_AS_EnumTimer.EMessage.TICK_FREE2_1);
+			}
+			if(phase == 2){
+				setMessage(I7_AS_EnumTimer.EMessage.TICK_FREE2_2);
+				calcNextFree2Time();
+			}
+		}
+	}
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[Date]]></ReturnType>
+					<Id>1598694097160</Id>
+					<Name><![CDATA[setNextFree2TickTime]]></Name>
+					<X>1150</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[unit]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[phase]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[upper_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lower_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[if(phase == 1){
+	if(tickFree2_check && tickFree2_unit  == unit){
+		if(tickFree2_value > lower_bound && (upper_bound == -1 || tickFree2_value < upper_bound)){
+			nextTickTime = nextFree2Time;
+		}
+	}
+	return null;
+}else{
+	if(tickFree2_check && tickFree2_unit  == unit){
+		if(tickFree2_value > lower_bound && (upper_bound == -1 || tickFree2_value < upper_bound)){
+			if(nextFree2Time.before(nextTickTime))
+			{
+				return nextFree2Time;
+			}
+		}
+	}
+	return nextTickTime;
+}
+	]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1598694196046</Id>
+					<Name><![CDATA[calcNextFree2Time]]></Name>
+					<X>1550</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//traceln("calcNextFree2Time");
+
+nextYear = actYear;
+nextMonth = actMonth;
+nextDay = actDay;
+nextHour = actHour;
+nextMinute = actMinute;
+nextSecond = actSecond;
+nextMillisecond = actMillisecond;
+
+switch(tickFree2_unit){
+	case 0:
+		nextMillisecond = nextMillisecond + tickFree2_value;
+		if(nextMillisecond>999)
+		{
+			nextMillisecond = nextMillisecond - 1000;
+			++nextSecond;
+		}
+		if(nextSecond>59)
+		{
+			nextSecond = nextSecond - 60;
+			++nextMinute;
+		}
+		if(nextMinute>59)
+		{
+			nextMinute = nextMinute - 60;
+			++nextHour;
+		}
+		if(nextHour>23)
+		{
+			nextHour = nextHour - 24;
+			++nextDay;
+		}
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+	
+	case 1:
+		nextSecond = nextSecond + tickFree2_value;
+		if(nextSecond>59)
+		{
+			nextSecond = nextSecond - 60;
+			++nextMinute;
+		}
+		if(nextMinute>59)
+		{
+			nextMinute = nextMinute - 60;
+			++nextHour;
+		}
+		if(nextHour>23)
+		{
+			nextHour = nextHour - 24;
+			++nextDay;
+		}
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+	
+	case 2:
+		nextMinute = nextMinute + tickFree2_value;
+		if(nextMinute>59)
+		{
+			nextMinute = nextMinute - 60;
+			++nextHour;
+		}
+		if(nextHour>23)
+		{
+			nextHour = nextHour - 24;
+			++nextDay;
+		}
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+		
+	case 3:
+		nextHour = nextHour + tickFree2_value;
+		if(nextHour>23)
+		{
+			nextHour = nextHour - 24;
+			++nextDay;
+		}
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+		
+	case 4:
+		nextDay = nextDay + tickFree2_value;
+		if(nextDay>daysOfMonth)
+		{
+			nextDay -= daysOfMonth;
+			++nextMonth;
+		}
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+		
+	case 5:
+		nextMonth = nextMonth + tickFree2_value;
+		if(nextMonth>11)
+		{
+			nextMonth = nextMonth - 12;
+			++nextYear;
+		}
+		break;
+		
+	case 6:
+		nextYear = nextYear + tickFree2_value;
+		break;
+		
+	default:
+		traceln("ERROR in switch case in calcNextFree2Time");
+		break;
+}
+
+nextCalendar.set(nextYear, nextMonth, nextDay, nextHour, nextMinute, nextSecond);
+nextCalendar.set( Calendar.MILLISECOND, nextMillisecond );
+
+nextFree2Time = nextCalendar.getTime();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1598696509260</Id>
+					<Name><![CDATA[setNextFreeTimes]]></Name>
+					<X>1350</X><Y>100</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[unit]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[phase]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[upper_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lower_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[if(FreeTickActive == 1){
+	//FreeTick1 and FreeTick2 have different dimensions
+	setNextFree1Times(unit, phase, upper_bound, lower_bound);
+	setNextFree2Times(unit, phase, upper_bound, lower_bound);
+	
+}else if(FreeTickActive == 2){
+	//FreeTick1 and FreeTick2 have the same dimension
+	if(phase == 1){
+		if(tickFree1_value > tickFree2_value){
+			setNextFree1Times(unit, phase, upper_bound, lower_bound);
+			setNextFree2Times(unit, phase, upper_bound, lower_bound);
+		}else{
+			setNextFree2Times(unit, phase, upper_bound, lower_bound);
+			setNextFree1Times(unit, phase, upper_bound, lower_bound);
+		}
+	}else{
+		// Phase 2
+		if(tickFree1_value < tickFree2_value){
+			setNextFree1Times(unit, phase, upper_bound, lower_bound);
+			setNextFree2Times(unit, phase, upper_bound, lower_bound);
+		}else{
+			setNextFree2Times(unit, phase, upper_bound, lower_bound);
+			setNextFree1Times(unit, phase, upper_bound, lower_bound);
+		}
+	}
+}
+		
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[Date]]></ReturnType>
+					<Id>1598699068459</Id>
+					<Name><![CDATA[setNextFreeTickTimes]]></Name>
+					<X>1350</X><Y>130</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[unit]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[phase]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[upper_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lower_bound]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[if(FreeTickActive == 1){
+	//FreeTick1 and FreeTick2 have different dimensions
+	if(phase == 1){
+		setNextFree1TickTime(unit, phase, upper_bound, lower_bound);
+		setNextFree2TickTime(unit, phase, upper_bound, lower_bound);
+	}else{
+		nextTickTime = setNextFree1TickTime(unit, phase, upper_bound, lower_bound);
+		nextTickTime = setNextFree2TickTime(unit, phase, upper_bound, lower_bound);
+	}
+	
+}else if(FreeTickActive == 2){
+	//FreeTick1 and FreeTick2 have the same dimension
+	if(phase == 1){
+		if(tickFree1_value < tickFree2_value){
+			setNextFree1TickTime(unit, phase, upper_bound, lower_bound);
+			setNextFree2TickTime(unit, phase, upper_bound, lower_bound);
+		}else{
+			setNextFree2TickTime(unit, phase, upper_bound, lower_bound);
+			setNextFree1TickTime(unit, phase, upper_bound, lower_bound);
+		}
+	}else{
+		// Phase 2
+		if(tickFree1_value < tickFree2_value){
+			nextTickTime = setNextFree1TickTime(unit, phase, upper_bound, lower_bound);
+			nextTickTime = setNextFree2TickTime(unit, phase, upper_bound, lower_bound);
+		}else{
+			nextTickTime = setNextFree2TickTime(unit, phase, upper_bound, lower_bound);
+			nextTickTime = setNextFree1TickTime(unit, phase, upper_bound, lower_bound);
+		}
+	}
+}
+		
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[boolean]]></ReturnType>
+					<Id>1600353780088</Id>
+					<Name><![CDATA[checkValue]]></Name>
+					<X>1150</X><Y>50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[unit]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[value]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[switch(unit){
+case 0: //Millisecond
+	if(value > 999){
+		trace("ERROR: tickFree Value of Millisecond must be smaller then 1000!");
+		return false;
+	}else{
+		return true;
+	}
+case 1: //Second
+	if(value > 59){
+		trace("ERROR: tickFree Value of Second must be smaller then 60!");
+		return false;
+	}else{
+		return true;
+	}
+case 2: //Minute
+	if(value > 59){
+		trace("ERROR: tickFree Value of Minute must be smaller then 60!");
+		return false;
+	}else{
+		return true;
+	}
+case 3: //Hour
+	if(value > 23){
+		trace("ERROR: tickFree Value of Hour must be smaller then 24!");
+		return false;
+	}else{
+		return true;
+	}
+case 4: //Day
+	if(value > 27){
+		trace("ERROR: tickFree Value of Day must be smaller then 28!");
+		return false;
+	}else{
+		return true;
+	}
+case 5: //Month
+	if(value > 11){
+		trace("ERROR: tickFree Value of Month must be smaller then 12!");
+		return false;
+	}else{
+		return true;
+	}
+case 6: //Year
+	return true;
+default:
+	return true;
+	
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1614163041248</Id>
+					<Name><![CDATA[setNextFree1TimeStep]]></Name>
+					<X>1750</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[switch(tickFree1_unit){
+	case 0:
+		tickFree1_step = tickFree1_value;
+		break;
+	
+	case 1:
+		tickFree1_step = 1000 * tickFree1_value;
+		break;
+	
+	case 2:
+		tickFree1_step = 60 * 1000 * tickFree1_value;
+		break;
+		
+	case 3:
+		tickFree1_step = 60 * 60 * 1000 * tickFree1_value;
+		break;
+		
+	case 4:
+		tickFree1_step = 24 * 60 * 60 * 1000 * tickFree1_value;
+		break;
+		
+	case 5:
+		tickFree1_step = 30 * 24 * 60 * 60 * 1000 * tickFree1_value;
+		break;
+		
+	case 6:
+		tickFree1_step = 365 * 24 * 60 * 60 * 1000 * tickFree1_value;
+		break;
+		
+	default:
+		traceln("ERROR in switch case in setNextFree1TimeStep");
+		break;
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1614163603278</Id>
+					<Name><![CDATA[setNextFree2TimeStep]]></Name>
+					<X>1750</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[switch(tickFree2_unit){
+	case 0:
+		tickFree2_step = tickFree2_value;
+		break;
+	
+	case 1:
+		tickFree2_step = 1000 * tickFree2_value;
+		break;
+	
+	case 2:
+		tickFree2_step = 60 * 1000 * tickFree2_value;
+		break;
+		
+	case 3:
+		tickFree2_step = 60 * 60 * 1000 * tickFree2_value;
+		break;
+		
+	case 4:
+		tickFree2_step = 24 * 60 * 60 * 1000 * tickFree2_value;
+		break;
+		
+	case 5:
+		tickFree2_step = 30 * 24 * 60 * 60 * 1000 * tickFree1_value;
+		break;
+		
+	case 6:
+		tickFree2_step = 365 * 24 * 60 * 60 * 1000 * tickFree1_value;
+		break;
+		
+	default:
+		traceln("ERROR in switch case in setNextFree2TimeStep");
+		break;
+}]]></Body>
+				</Function>
+			</Functions>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1554923715084</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<EmbeddedObjects>
+				<EmbeddedObject>
+					<Id>1554923715028</Id>
+					<Name><![CDATA[timer__]]></Name>
+					<X>-700</X><Y>70</Y>
+					<Label><X>0</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+						<ClassName><![CDATA[I7_AI_Interface]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+							<ClassName><![CDATA[I7_AI_Interface]]></ClassName>
+							<ItemName><![CDATA[1495120400183]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[Port_Right]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Left]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[out]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Conf_Component]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[return_level]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[After_Filter_Round]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Start_Component]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[this::initializeTime]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[filter_level]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[exclude_type]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Is_Filter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Toggle]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Reflection]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Filter_Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Re_Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Before_Filter_Round]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Ports]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Descriptor]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[{
+	{"component", "I7_AS_Timer"}
+}]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[ReLabel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Show]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[get_]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+	Map.entry("actCalendar", ()->actCalendar),
+	Map.entry("actTime", ()->actTime)
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[set_]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[calc_]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+	Map.entry("initializeTime", (IRel0) ()->initializeTime())
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[func_]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[get_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[set_default]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+	Map.entry("m_int_ext_tick", (IRel1<I7_AS_EnumTimer.EMessage>) v->{})
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[calc_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[func_default]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+			</EmbeddedObjects>
+
+			<Presentation>
+				<Level>
+					<Id>1610541626378</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>ALWAYS_SHOW</LevelVisibility>
+
+			<Presentation>
+				<RoundedRectangle>
+					<Id>1554923715018</Id>
+					<Name><![CDATA[roundRectangle]]></Name>
+					<X>-720</X><Y>30</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>690</Width>
+					<Height>340</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor/>
+					<FillMaterial>null</FillMaterial>
+					<ArcRadius>10</ArcRadius>
+				</RoundedRectangle>
+				<Rectangle>
+					<Id>1554923715020</Id>
+					<Name><![CDATA[rectangle]]></Name>
+					<X>-200</X><Y>-130</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[return true;]]></OnClickCode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>150</Width>
+					<Height>60</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1554923715024</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>29.556</X><Y>30</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Timer]]></Text>
+					<Font>
+						<Name>Arial</Name>
+						<Size>20</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1613471956955</Id>
+					<Name><![CDATA[text1]]></Name>
+					<X>-125</X><Y>-130</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[i7_AS_Timer]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1613471956967</Id>
+					<Name><![CDATA[text3]]></Name>
+					<X>-125</X><Y>-100</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[ ]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1613471956977</Id>
+					<Name><![CDATA[text2]]></Name>
+					<X>-125</X><Y>-115</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[I7_AS_Timer]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1613471956986</Id>
+					<Name><![CDATA[text4]]></Name>
+					<X>-125</X><Y>-85</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[ ]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1602003640971</Id>
+			<Name><![CDATA[I7_AS_TimeUtility]]></Name>
+			<AdditionalClassCode><![CDATA[// MIT License
+// 
+// Copyright (c) 2023 Computer Science 7 - FAU
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.]]></AdditionalClassCode>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1602003640966</Id>
+				<Name><![CDATA[1602003640966]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends I7_AS_IRowTableLine]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Table row type:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1561795200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1602003640967</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1610541626377</CurrentLevel>
+			<ConnectionsId>1602003641077</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1602003641001</Id>
+					<Name><![CDATA[calendar]]></Name>
+					<X>250</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Calendar]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[Calendar.getInstance();]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1602003641003</Id>
+					<Name><![CDATA[acttime]]></Name>
+					<X>250</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[-1.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1602003641005</Id>
+					<Name><![CDATA[actCalendar]]></Name>
+					<X>250</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Calendar]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[Calendar.getInstance();]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1602003641007</Id>
+					<Name><![CDATA[acti7asTime]]></Name>
+					<X>250</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[I7_AS_Time]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new I7_AS_Time()]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1685270078361</Id>
+					<Name><![CDATA[do_trace]]></Name>
+					<X>850</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[boolean]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1685270078359</Id>
+							<Label><![CDATA[do_trace]]></Label>
+							<EditorContolType>CHECK_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>SEPARATOR</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<Ports>
+				<Port>
+					<Id>1616578673752</Id>
+					<Name><![CDATA[out]]></Name>
+					<X>-200</X><Y>-100</Y>
+					<Label><X>5</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<IncomingMessageType><![CDATA[Object]]></IncomingMessageType>
+					<OutgoingMessageType><![CDATA[Object]]></OutgoingMessageType>
+					<CustomPort><![CDATA[false]]></CustomPort>
+				</Port>
+			</Ports>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[long]]></ReturnType>
+					<Id>1602003640975</Id>
+					<Name><![CDATA[ymdhm2ms]]></Name>
+					<Description><![CDATA[Converts a year month day hour minute time to the time in milliseconds]]></Description>
+					<X>50</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[year]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[month]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[day]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[hour]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[minute]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[calendar.set( Calendar.YEAR, year ); 
+calendar.set( Calendar.MONTH, month );
+calendar.set( Calendar.DAY_OF_MONTH, day );
+calendar.set( Calendar.HOUR_OF_DAY,  hour );
+calendar.set( Calendar.MINUTE, minute );
+calendar.set( Calendar.SECOND, 0 );
+calendar.set( Calendar.MILLISECOND, 0 );
+
+return calendar.getTimeInMillis();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1602003640977</Id>
+					<Name><![CDATA[interpolateValue]]></Name>
+					<X>50</X><Y>550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[x]]></Name>
+						<Type><![CDATA[long]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[x1]]></Name>
+						<Type><![CDATA[long]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[x2]]></Name>
+						<Type><![CDATA[long]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[y1]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[y2]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[long x_d = x2 - x1;
+double y_d = y2 - y1;
+
+double a = y_d / x_d;
+long x_rel = x - x1;
+
+return a*x_rel + y1;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[long]]></ReturnType>
+					<Id>1602003640981</Id>
+					<Name><![CDATA[actms]]></Name>
+					<X>50</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if(acttime!=time())
+{
+	acttime=time();
+	actCalendar.set(getYear(), getMonth(), getDayOfMonth(), getHourOfDay(), getMinute(), getSecond()); 
+	actCalendar.set( Calendar.MILLISECOND, getMillisecond() );
+}
+
+return actCalendar.getTimeInMillis();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[long]]></ReturnType>
+					<Id>1602003640983</Id>
+					<Name><![CDATA[i7astime2ms]]></Name>
+					<Description><![CDATA[Converts a year month day hour minute time to the time in milliseconds]]></Description>
+					<X>50</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[ttime]]></Name>
+						<Type><![CDATA[I7_AS_Time]]></Type>
+					</Parameter>
+					<Body><![CDATA[ttime.get(calendar);
+return calendar.getTimeInMillis();]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[I7_AS_Time]]></ReturnType>
+					<Id>1602003640985</Id>
+					<Name><![CDATA[ms2i7astime]]></Name>
+					<Description><![CDATA[Converts a year month day hour minute time to the time in milliseconds]]></Description>
+					<X>50</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[ms]]></Name>
+						<Type><![CDATA[long]]></Type>
+					</Parameter>
+					<Body><![CDATA[calendar.setTimeInMillis(ms);
+return new I7_AS_Time(calendar);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[long]]></ReturnType>
+					<Id>1602003640987</Id>
+					<Name><![CDATA[min2ms]]></Name>
+					<Description><![CDATA[Converts a year month day hour minute time to the time in milliseconds]]></Description>
+					<X>50</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[minute]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[return Math.round(60*1000*minute);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[long]]></ReturnType>
+					<Id>1602003640989</Id>
+					<Name><![CDATA[sec2ms]]></Name>
+					<Description><![CDATA[Converts a year month day hour minute time to the time in milliseconds]]></Description>
+					<X>50</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[second]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[return Math.round(1000*second);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[long]]></ReturnType>
+					<Id>1602003640991</Id>
+					<Name><![CDATA[hour2ms]]></Name>
+					<Description><![CDATA[Converts a year month day hour minute time to the time in milliseconds]]></Description>
+					<X>50</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[hour]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[return Math.round(3600000*hour);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[I7_AS_Time]]></ReturnType>
+					<Id>1602003640993</Id>
+					<Name><![CDATA[acti7astime]]></Name>
+					<X>250</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if(acttime!=time())
+{
+	acttime=time();
+	actCalendar.set(getYear(), getMonth(), getDayOfMonth(), getHourOfDay(), getMinute(), getSecond()); 
+	actCalendar.set( Calendar.MILLISECOND, getMillisecond() );
+	
+	acti7asTime.set(actCalendar);
+}
+
+return new I7_AS_Time(actCalendar);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[I7_AS_Time]]></ReturnType>
+					<Id>1602003640997</Id>
+					<Name><![CDATA[beforeacti7astime]]></Name>
+					<X>400</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if(acttime!=time())
+{
+	acttime=time();
+	actCalendar.set(getYear(), getMonth(), getDayOfMonth(), getHourOfDay(), getMinute(), getSecond()); 
+	actCalendar.set( Calendar.MILLISECOND, getMillisecond() );
+}
+
+calendar.setTimeInMillis(actCalendar.getTimeInMillis()-1);
+
+return new I7_AS_Time(calendar);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[Date]]></ReturnType>
+					<Id>1602003640999</Id>
+					<Name><![CDATA[ymdhm2date]]></Name>
+					<Description><![CDATA[Converts a year month day hour minute time to the time in milliseconds]]></Description>
+					<X>50</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[year]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[month]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[day]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[hour]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[minute]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[calendar.set( Calendar.YEAR, year ); 
+calendar.set( Calendar.MONTH, month );
+calendar.set( Calendar.DAY_OF_MONTH, day );
+calendar.set( Calendar.HOUR_OF_DAY,  hour );
+calendar.set( Calendar.MINUTE, minute );
+calendar.set( Calendar.SECOND, 0 );
+calendar.set( Calendar.MILLISECOND, 0 );
+
+return calendar.getTime();]]></Body>
+				</Function>
+			</Functions>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1602003641077</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<EmbeddedObjects>
+				<EmbeddedObject>
+					<Id>1602003641017</Id>
+					<Name><![CDATA[i7_AS_TimeUtility__]]></Name>
+					<X>-700</X><Y>70</Y>
+					<Label><X>0</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+						<ClassName><![CDATA[I7_AI_Interface]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+							<ClassName><![CDATA[I7_AI_Interface]]></ClassName>
+							<ItemName><![CDATA[1495120400183]]></ItemName>
+						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[I7_AS_TimeUtility]]></Code>
+						</GenericParameterSubstituteValue>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[Is_Filter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Toggle]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Reflection]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[return_level]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[I7_AI_Enumeration.EReturn.RETURN_CURRENT_LEVEL]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[filter_level]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Conf_Component]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[exclude_type]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[After_Filter_Round]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Start_Component]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Left]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[out]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Port_Right]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Filter_Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Re_Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Before_Filter_Round]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Ports]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Descriptor]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[{
+	{"component", "I7_AS_TimeUtility"}
+}]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Label]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[ReLabel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Show]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[get_]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+	Map.entry("actms", ()->actms()),
+	Map.entry("acti7astime", ()->acti7astime()),
+	Map.entry("beforeacti7astime", ()->beforeacti7astime())
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[set_]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[calc_]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[func_]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Map.ofEntries(
+	Map.entry("ymdhm2date", (IFunc5<Integer, Integer, Integer, Integer, Integer, Date>) (year, month, day, hour, minute)->ymdhm2date(year, month, day, hour, minute)),
+	Map.entry("ms2i7astime", (IFunc1<Long, I7_AS_Time>) (ms)->ms2i7astime(ms)),
+	Map.entry("ymdhm2ms", (IFunc5<Integer, Integer, Integer, Integer, Integer, Long>) (year, month, day, hour, minute)->ymdhm2ms(year, month, day, hour, minute)),
+	Map.entry("i7astime2ms", (IFunc1<I7_AS_Time, Long>) (ttime)->i7astime2ms(ttime)),
+	Map.entry("interpolateValue", (IFunc5<Long, Long, Long, Double, Double, Double>) (x, x1, x2, y1, y2)->interpolateValue(x, x1, x2, y1, y2)),
+	Map.entry("hour2ms", (IFunc1<Double, Long>) (hour)->hour2ms(hour)),
+	Map.entry("min2ms", (IFunc1<Double, Long>) (minute)->min2ms(minute)),
+	Map.entry("sec2ms", (IFunc1<Double, Long>) (second)->sec2ms(second))
+)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[get_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[set_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[calc_default]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[func_default]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1602003641021</Id>
+					<Name><![CDATA[tr]]></Name>
+					<X>850</X><Y>500</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+						<ClassName><![CDATA[I7_AI_Trace]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></PackageName>
+							<ClassName><![CDATA[I7_AI_Trace]]></ClassName>
+							<ItemName><![CDATA[1554463658287]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[Trace]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[do_trace]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[Index]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[my_trace]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+			</EmbeddedObjects>
+
+			<Presentation>
+				<Level>
+					<Id>1610541626377</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>ALWAYS_SHOW</LevelVisibility>
+
+			<Presentation>
+				<RoundedRectangle>
+					<Id>1602003641013</Id>
+					<Name><![CDATA[roundRectangle]]></Name>
+					<X>-720</X><Y>30</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>690</Width>
+					<Height>340</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor/>
+					<FillMaterial>null</FillMaterial>
+					<ArcRadius>10</ArcRadius>
+				</RoundedRectangle>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1602003640973</Id>
+					<Name><![CDATA[button]]></Name>
+					<X>50</X><Y>10</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[getExperimentHost().setPresentable(getRootAgent());]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[Main]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<Rectangle>
+					<Id>1616578673730</Id>
+					<Name><![CDATA[rectangle]]></Name>
+					<X>-200</X><Y>-130</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[return true;]]></OnClickCode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>150</Width>
+					<Height>60</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1616578673686</Id>
+					<Name><![CDATA[text3]]></Name>
+					<X>-125</X><Y>-100</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[ ]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1616578673708</Id>
+					<Name><![CDATA[text2]]></Name>
+					<X>-125</X><Y>-115</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[I7_AS_TimeUtility]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1616578673719</Id>
+					<Name><![CDATA[text1]]></Name>
+					<X>-125</X><Y>-130</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[i7_AS_Timer]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1616578673741</Id>
+					<Name><![CDATA[text4]]></Name>
+					<X>-125</X><Y>-85</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>true</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16744320</Color>
+					<Text><![CDATA[ ]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+	</ActiveObjectClasses>	
+	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
+	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
+	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
+	<AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+	<FixedTimeStep>0.001</FixedTimeStep>
+	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
+	<TimeAccuracy>1.0E-5</TimeAccuracy>
+	<Frame>
+		<Width>1000</Width>
+		<Height>600</Height>
+	</Frame>
+	<Database>
+		<Logging>false</Logging>
+		<AutoExport>false</AutoExport>
+		<ShutdownCompact>false</ShutdownCompact>
+		<ImportSettings>
+		</ImportSettings>
+		<ExportSettings>
+		</ExportSettings>
+	</Database>
+	
+	<RunConfiguration ActiveObjectClassId="1554923714932">
+		<Id>1554923699416</Id>
+		<Name><![CDATA[RunConfiguration]]></Name>
+		<MaximumMemory>512</MaximumMemory>
+		<ModelTimeProperties>
+			<StopOption><![CDATA[Stop at specified time]]></StopOption>
+			<InitialDate><![CDATA[1554854400000]]></InitialDate>	
+			<InitialTime><![CDATA[0.0]]></InitialTime>	
+			<FinalDate><![CDATA[1557446400000]]></FinalDate>	
+			<FinalTime><![CDATA[100.0]]></FinalTime>	
+		</ModelTimeProperties>
+		<AnimationProperties>
+			<StopNever>true</StopNever>
+			<ExecutionMode>realTimeScaled</ExecutionMode>
+			<RealTimeScale>1.0</RealTimeScale>
+			<EnableZoomAndPanning>true</EnableZoomAndPanning>
+			<EnableDeveloperPanel>false</EnableDeveloperPanel>
+			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+		</AnimationProperties>
+		<Inputs>		
+		</Inputs>
+		<Outputs>
+		</Outputs>
+	</RunConfiguration>
+	<JavaClasses>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1554925457642</Id>
+			<Name><![CDATA[I7_AS_Time]]></Name>
+			<Text><![CDATA[/**
+ * I7_AS_Time
+ */	
+public class I7_AS_Time implements Comparable<I7_AS_Time>, java.io.Serializable {
+
+	public int year;
+	public int month;
+	public int day;
+	public int hour;
+	public int minute;
+	public int second;
+	public int millisecond;
+	
+	
+    /**
+     * Default constructor
+     */
+    public I7_AS_Time() {
+    }
+
+    /**
+     * Constructor initializing the fields
+     */
+    public I7_AS_Time(int year ,int month, int day, int hour, int minute, int second, int millisecond) {		
+    	this.year = year;
+    	this.month = month;
+    	this.day = day;
+    	this.hour = hour;
+    	this.minute = minute;
+    	this.second = second;
+    	this.millisecond = millisecond;
+    }	
+	
+    public I7_AS_Time(I7_AS_Time a) {		
+    	this.year = a.year;
+    	this.month = a.month;
+    	this.day = a.day;
+    	this.hour = a.hour;
+    	this.minute = a.minute;
+    	this.second = a.second;
+    	this.millisecond = a.millisecond;
+    }	
+
+    public I7_AS_Time(Calendar a)
+    {		
+	    this.year = a.get(Calendar.YEAR);
+	    this.month = a.get(Calendar.MONTH);
+	    this.day = a.get(Calendar.DAY_OF_MONTH);
+	    this.hour = a.get(Calendar.HOUR_OF_DAY);
+	    this.minute = a.get(Calendar.MINUTE);
+	    this.second = a.get(Calendar.SECOND);
+	    this.millisecond = a.get(Calendar.MILLISECOND);
+    }
+    
+    public void set(Calendar a)
+    {		
+	    year = a.get(Calendar.YEAR);
+	    month = a.get(Calendar.MONTH);
+	    day = a.get(Calendar.DAY_OF_MONTH);
+	    hour = a.get(Calendar.HOUR_OF_DAY);
+	    minute = a.get(Calendar.MINUTE);
+	    second = a.get(Calendar.SECOND);
+	    millisecond = a.get(Calendar.MILLISECOND);
+   }    
+    
+    public void get(Calendar a)
+    {		
+	    a.set( Calendar.YEAR, year ); 
+	    a.set( Calendar.MONTH, month );
+	    a.set( Calendar.DAY_OF_MONTH, day );
+	    a.set( Calendar.HOUR_OF_DAY,  hour );
+	    a.set( Calendar.MINUTE, minute );
+	    a.set( Calendar.SECOND, second );
+	    a.set( Calendar.MILLISECOND, millisecond );
+    }    
+
+    public void set(I7_AS_Time a)
+    {		
+	    year = a.year;
+	    month = a.month;
+	    day = a.day;
+	    hour = a.hour;
+	    minute = a.minute;
+	    second = a.second;
+	    millisecond = a.millisecond;
+   }    
+    
+    public void set(int year, int month, int day, int hour, int minute, int second, int millisecond) {		
+    	this.year = year;
+    	this.month = month;
+    	this.day = day;
+    	this.hour = hour;
+    	this.minute = minute;
+    	this.second = second;
+    	this.millisecond = millisecond;
+    }	
+
+
+    public int compareTo(I7_AS_Time a)
+    {
+		int comp = Integer.compare(year, a.year);
+		if(comp!=0)
+		{
+			return comp;
+		}
+
+		comp = Integer.compare(month, a.month);
+		if(comp!=0)
+		{
+			return comp;
+		}
+
+		comp = Integer.compare(day, a.day);
+		if(comp!=0)
+		{
+			return comp;
+		}
+
+		comp = Integer.compare(hour, a.hour);
+		if(comp!=0)
+		{
+			return comp;
+		}
+		
+		comp = Integer.compare(minute, a.minute);
+		if(comp!=0)
+		{
+			return comp;
+		}
+		
+		comp = Integer.compare(second, a.second);
+		if(comp!=0)
+		{
+			return comp;
+		}
+
+		return Integer.compare(millisecond, a.millisecond);
+    }
+  
+	@Override
+	public String toString() {
+		return toStringDate() + " " + toStringTime();
+	}
+
+	public String toStringTime() {
+		return "" + (hour<10?"0":"") + hour + ":" + (minute<10?"0":"") + minute + ":" + (second<10?"0":"") + second + ":" + (millisecond<10?"0":"") + (millisecond<100?"0":"") + millisecond;
+	}
+	public String toStringHourMinute() {
+		return "" + (hour<10?"0":"") + hour + ":" + (minute<10?"0":"") + minute;
+	}
+
+	public String toStringHourMinuteSecond() {
+		return "" + (hour<10?"0":"") + hour + ":" + (minute<10?"0":"") + minute + ":" + (second<10?"0":"") + second;
+	}
+
+	public String toStringDate() {
+		return year + "." + (month<9?"0":"") + (month+1) + "." + (day<10?"0":"") + day;
+	}
+	
+
+	/**
+	 * This number is here for model snapshot storing purpose<br>
+	 * It needs to be changed when this class gets changed
+	 */ 
+	private static final long serialVersionUID = 2L;
+}
+ ]]></Text>
+		</JavaClass>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1554933747234</Id>
+			<Name><![CDATA[I7_AS_EnumTimer]]></Name>
+			<Text><![CDATA[/**
+ * I7_AS_EnumTimer
+ */	
+public class I7_AS_EnumTimer implements java.io.Serializable {
+
+
+	public enum EMessage
+	{
+		CLEAR, SWITCH_ON, SWITCH_OFF, SWITCH_OFF_FORCED, INIT, WRITE, WRITEHEADER, SYNC, TICK_START_1, TICK_START_2, TICK_TIMESTEP,
+		TICK_FREE1_1, TICK_FREE2_1, TICK_MILLISECOND_1, TICK_SECOND_1, TICK_TEN_SECOND_1, TICK_MINUTE_1, TICK_QUARTER_1, TICK_HOUR_1, TICK_DAY_1, TICK_WEEK_1, TICK_MONTH_1, TICK_YEAR_1,
+		TICK_FREE1_2, TICK_FREE2_2, TICK_MILLISECOND_2, TICK_SECOND_2, TICK_TEN_SECOND_2, TICK_MINUTE_2, TICK_QUARTER_2, TICK_HOUR_2, TICK_DAY_2, TICK_WEEK_2, TICK_MONTH_2, TICK_YEAR_2,
+		
+	}
+	
+	/**
+     * Default constructor
+     */
+    public I7_AS_EnumTimer(){
+    }
+     
+	
+	@Override
+	public String toString() {			
+		return super.toString();
+	}
+
+	/**
+	 * This number is here for model snapshot storing purpose<br>
+	 * It needs to be changed when this class gets changed
+	 */ 
+	private static final long serialVersionUID = 2L;
+}]]></Text>
+		</JavaClass>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1593340776387</Id>
+			<Name><![CDATA[FreeTick]]></Name>
+			<Text><![CDATA[/**
+ * FreeTick
+ */	
+public class FreeTick implements Serializable {
+
+	public boolean checked;
+	public String unit;
+	public int value;
+	
+    /**
+     * Default constructor
+     */
+	public FreeTick() {
+		checked = false;
+		unit = "Millisecond";
+		value = 0;
+	}
+	
+	
+	
+    public FreeTick(boolean checked, String unit, int value) {
+    	this.checked = checked;
+    	this.unit = unit;
+    	this.value = value;
+    }
+    
+    public FreeTick(FreeTick a) {
+    	this.checked = a.checked;
+    	this.unit = a.unit;
+    	this.value = a.value;
+    }
+
+	@Override
+	public String toString() {
+		return checked + ", " + unit + ", " + value;
+	}
+
+	/**
+	 * This number is here for model snapshot storing purpose<br>
+	 * It needs to be changed when this class gets changed
+	 */ 
+	private static final long serialVersionUID = 1L;
+
+}]]></Text>
+		</JavaClass>
+	</JavaClasses>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[de.fau.i7.anyenergy.anyinterface.anyinterface]]></LibraryName>
+		<VersionMajor>0</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></LibraryName>
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[de.fau.i7.anyenergy.anysystem.system]]></LibraryName>
+		<VersionMajor>0</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+</Model>
+</AnyLogicWorkspace>

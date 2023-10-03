@@ -1,0 +1,3 @@
+id;cap;start;leak;charge_max;charge_min;charge_eff;discharge_max;discharge_min;discharge_eff
+b1_h_0;4.0;100.0;0.02;3.0;1.0;0.9;3.0;0.9999;0.9
+b2_h_0;4.0;100.0;0.02;3.0;1.0;0.9;3.0;0.9999;0.9
